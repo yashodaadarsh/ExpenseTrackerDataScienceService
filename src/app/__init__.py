@@ -1,10 +1,12 @@
 from flask import Flask, request, jsonify
 from service.messageService import MessageService
+from kafka import KafkaProducer
 
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
 
 messageService = MessageService()
+# producer = KafkaProducer(boo)
 
 @app.route('/v1/ds/message', methods=['POST'])
 def handle_message():
@@ -17,4 +19,4 @@ def handle_get():
     return "Hello World"
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8090, debug=False)
+    app.run(host="0.0.0.0", port=8093, debug=False)

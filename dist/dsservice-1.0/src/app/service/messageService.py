@@ -7,8 +7,6 @@ class MessageService:
 
     def process_message(self,message):
         if self.messageUtil.isBankSms(message):
-            print("Bank SMS detected. Processing with LLMService.  Message:", message)
             return self.llmService.runLLM(message)
         else:
-            print("Not a Bank SMS. Ignoring message:", message)
             return None

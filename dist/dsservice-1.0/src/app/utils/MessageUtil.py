@@ -19,22 +19,11 @@ class MessageUtil():
         """
         # Enhanced list of keywords for robust bank SMS detection
         words_to_search = [
-            # Core debit indicators
-            'debited', 'debit', 'spent', 'spend', 'paid', 'paying',
-
-            # Payment methods (usually debit when combined with verbs)
-            'upi', 'card', 'atm', 'pos', 'netbanking', 'online',
-
-            # Transaction context
-            'purchase', 'txn', 'transaction', 'merchant', 'store',
-            'transfer to', 'sent to',
-
-            # Amount indicators (used mostly in debit SMS)
-            'rs', 'inr', 'amount', 'amt',
-
-            # Wallet / app spends
-            'wallet', 'google pay', 'phonepe', 'paytm'
-        ]
+            'spent', 'card', 'bank', 'debited', 'credited', 
+            'txn', 'transaction', 'transfer', 'payment', 'paid', 
+            'Rs', 'INR', 'amount', 'balance', 'account', 'Acct', 
+            'A/C', 'wallet', 'loan', 'EMI', 'UPI', 'secure'
+        ] 
         
         # Create a case-insensitive, whole-word-match regular expression pattern
         # r'\b(?:word1|word2|word3)\b' ensures we match 'card' but not 'discard'
